@@ -1,0 +1,27 @@
+@use './_resources/scss/_fonts.css';
+:root {
+}
+
+body{
+  background-color: #000;
+  color: #fff;
+  font-family: "ROBOTO normal";
+  font-size: 18px;
+  line-height: 1.5;
+  margin: 0;
+  padding: 1rem;
+  *{
+    margin: 0;
+    padding: 0;
+  }
+
+  h1{
+    font-family: "ROBOTO header thin";
+  }
+
+  h1,
+  h2{
+    margin-bottom: 1rem;
+  }
+}
+
