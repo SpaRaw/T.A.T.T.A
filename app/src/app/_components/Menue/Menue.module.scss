@@ -1,0 +1,44 @@
+@use "../../_resources/scss/_variables.scss";
+
+.menue {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  width: calc(100% - 2rem);
+  padding: 1rem;
+  background-color: variables.$background-medium;
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  button {
+    width: 68px;
+    height: 68px;
+    background-color: black;
+  }
+
+  svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  path {
+    fill: black;
+  }
+
+  button {
+    border: none;
+    background-color: variables.$background-medium;
+  }
+
+  .active {
+    path {
+      fill: variables.$color-accent;
+    }
+  }
+}
+
