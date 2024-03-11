@@ -1,11 +1,10 @@
-
 import styles from "./page.module.css";
 
-
 export default function Home() {
-  return (
-    <main>
-      <h1>Dashboard</h1>
-    </main>
-  );
+    return (
+        <main>
+            <h1>Dashboard</h1>
+
+        </main>
+    );
 }

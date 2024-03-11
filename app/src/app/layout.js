@@ -1,6 +1,7 @@
 
 import "./globals.scss";
-import Menue from "@/app/_components/ui/Menue/Menue";
+import Menue from "@/app/_components/Menue/Menue";
+
 
 export default function RootLayout({ children }) {
   return (
