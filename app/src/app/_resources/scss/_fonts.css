@@ -1,9 +1,9 @@
 @font-face {
     font-family: "ROBOTO normal";
-    src: url("../font/Roboto-Regular.ttf");
+    src: url("app/src/app/_resources/_font/Roboto-Regular.ttf");
 }
 
 @font-face {
     font-family: "ROBOTO header thin";
-    src: url("../font/Roboto-thin.ttf");
+    src: url("/_fonts/Roboto-Thin.ttf");
 }

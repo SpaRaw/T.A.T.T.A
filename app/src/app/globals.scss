@@ -1,11 +1,19 @@
-@use './_resources/scss/_fonts.css';
+
 :root {
 }
 
+@font-face {
+  font-family: "Roboto Normal";
+  src: url("../app/public/_font/Roboto-Regular.ttf");
+}
+@font-face{
+  font-family: "Roboto Bold";
+  src: url("../app/public/_font/Roboto-Bold.ttf");
+}
 body{
   background-color: #000;
   color: #fff;
-  font-family: "ROBOTO normal";
+  font-family: "Roboto Normal";
   font-size: 18px;
   line-height: 1.5;
   margin: 0;
@@ -16,7 +24,7 @@ body{
   }
 
   h1{
-    font-family: "ROBOTO header thin";
+    font-family: "ROBOTO Bold";
   }
 
   h1,
