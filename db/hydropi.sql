@@ -1,5 +1,5 @@
 -- --------------------------------------------------------
--- Host:                         localhost
+-- Host:                         127.0.0.1
 -- Server-Version:               8.3.0 - MySQL Community Server - GPL
 -- Server-Betriebssystem:        Linux
 -- HeidiSQL Version:             12.6.0.6765
@@ -22,14 +22,10 @@ USE `hydropi`;
 -- Exportiere Struktur von Tabelle hydropi.test
 CREATE TABLE IF NOT EXISTS `test` (
   `ID` int NOT NULL AUTO_INCREMENT,
-  `test` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportiere Daten aus Tabelle hydropi.test: ~1 rows (ungefähr)
-DELETE FROM `test`;
-INSERT INTO `test` (`ID`, `test`) VALUES
-	(1, 'Hallo Welt');
+-- Exportiere Daten aus Tabelle hydropi.test: ~0 rows (ungefähr)
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

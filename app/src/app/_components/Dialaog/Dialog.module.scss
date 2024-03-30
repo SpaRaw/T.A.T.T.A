@@ -1,0 +1,16 @@
+@use "../../_resources/scss/_variables.scss";
+
+.modal{
+  background-color: variables.$background-light;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+
+  .backButton{
+    background-color: transparent;
+    border: none
+  }
+}
