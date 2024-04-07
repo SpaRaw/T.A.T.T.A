@@ -1,5 +1,6 @@
 'use client';
 import {useState} from "react";
+import Open from "@/app/_components/UI/Open/Open";
 
 async function getData(){
     //const data = await fetch("http://localhost:3000/api/test")
@@ -44,6 +45,7 @@ export default async function DrivePage(){
     const data = await getData()
     console.log(data)
     return(
-        <p> "ji"</p>
+        <div>
+        </div>
     )
 }

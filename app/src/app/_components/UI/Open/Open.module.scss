@@ -1,0 +1,26 @@
+@import "src/app/_resources/scss/variables";
+.Wrapper{
+  position: absolute;
+  bottom: 116px;
+  right: 16px;
+  border: 1px solid $color-accent;
+  border-radius: 1rem;
+  padding: 0.5rem;
+
+  button{
+    width: 42px;
+    height: 42px;
+    border:none;
+    background-color: $background-color;
+    display: flex;
+    align-items: center;
+    svg{
+      width: 42px;
+      height: 42px;
+
+      path{
+        fill: $color-accent;
+      }
+    }
+  }
+}
