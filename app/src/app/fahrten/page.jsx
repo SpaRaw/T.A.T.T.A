@@ -4,16 +4,17 @@ import DriveLoading from "@/app/fahrten/DriveLoading/DriveLoading";
 import DrivePage from "@/app/fahrten/DrivePage/DrivePage";
 import Dialog from "@/app/_components/Dialaog/Dialog";
 import Open from "@/app/_components/UI/Open/Open";
+import DriveForm from "@/app/fahrten/DriveForm/DriveForm";
 
-export default function fahrten({}){
-    const [shouldShowModal, updateShowModal] = useState(false);
+export default async function fahrten({}){
+    const [shouldShowModal, updateShowModal] = useState(true);
     return(
         <>
             <Suspense fallback={<DriveLoading/>}>
                 <DrivePage />
             </Suspense>
             {shouldShowModal &&<Dialog title={"Fahrt hinzufügen"} callbackOnClose={updateShowModal}>
-                <h1>HI</h1>
+                <DriveForm callbackClose={updateShowModal}/>
             </Dialog>
             }
             <Open callback={updateShowModal}/>

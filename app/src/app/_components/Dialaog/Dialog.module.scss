@@ -1,16 +1,27 @@
 @use "../../_resources/scss/_variables.scss";
 
 .modal{
-  background-color: variables.$background-light;
+  background-color: variables.$background-medium;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 2rem);
+  height: calc(100% - 2rem);
   z-index: 100;
+  padding: 1rem;
 
   .backButton{
     background-color: transparent;
     border: none
+  }
+
+  header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    path{
+      fill: variables.$color-accent;
+    }
   }
 }

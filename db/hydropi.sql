@@ -19,13 +19,25 @@
 CREATE DATABASE IF NOT EXISTS `hydropi` /*!40100 DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci */ /*!80016 DEFAULT ENCRYPTION='N' */;
 USE `hydropi`;
 
--- Exportiere Struktur von Tabelle hydropi.test
-CREATE TABLE IF NOT EXISTS `test` (
+-- Exportiere Struktur von Tabelle hydropi.drive
+CREATE TABLE IF NOT EXISTS `drive` (
   `ID` int NOT NULL AUTO_INCREMENT,
+  `DriveName` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '0',
+  `Payer` varchar(5) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '0',
+  `Date` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '0',
+  `Distance` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportiere Daten aus Tabelle hydropi.test: ~0 rows (ungefähr)
+-- Exportiere Daten aus Tabelle hydropi.drive: ~6 rows (ungefähr)
+DELETE FROM `drive`;
+INSERT INTO `drive` (`ID`, `DriveName`, `Payer`, `Date`, `Distance`) VALUES
+	(4, 'Tierartze', 'both', '2024-04-08', '13,3'),
+	(5, 'Animuc', 'minla', '2024-04-05', '130.3'),
+	(6, 'Arbeit', 'minla', '2024-04-08', '30,3'),
+	(7, 'Einkaufen Lidl', 'both', '2024-04-08', '2,1'),
+	(8, 'Eltern Besuchen', 'corgi', '2024-04-07', '260'),
+	(9, 'Test', 'minla', '2024-04-09', '13,3');
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
