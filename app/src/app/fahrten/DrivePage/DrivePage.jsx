@@ -1,51 +1,21 @@
-'use client';
-import {useState} from "react";
+
 import Open from "@/app/_components/UI/Open/Open";
+import DriveDay from "@/app/fahrten/DriveDay/DriveDay";
 
 async function getData(){
-    //const data = await fetch("http://localhost:3000/api/test")
-    let data = {
-        days: [
-            {
-                day: "10011",
-                entrys:[
-                    {
-                        id: 1,
-                        driver: "Minla",
-                        name: "KFC Food holen",
-                        distance: 19.80,
-                        paying: 3
-                    },
-                    {
-                        id: 1,
-                        driver: "Minla",
-                        name: "KFC Food holen",
-                        distance: 19.80,
-                        paying: 3
-                    }
-                ]
-            },
-            {
-                day: "1034",
-                entrys:[
-                    {
-                        id: 4,
-                        driver: "Corgi",
-                        name: "Lorem ipsum",
-                        distance: 41.1,
-                        paying: 1
-                    }
-                ]
-            }
-        ]
-    }
-    return data
+    const response = await fetch("http://localhost:3000/api/fetch/drive");
+    let data =await  response.json();
+    return data.response;
 }
 export default async function DrivePage(){
-    const data = await getData()
-    console.log(data)
+    const data =  await getData();
+    let list = [];
+    for(const [key, value] of Object.entries(data)){
+        list.push(<DriveDay key={key} day={key} list={value}/>)
+    }
     return(
         <div>
+            {list}
         </div>
     )
 }

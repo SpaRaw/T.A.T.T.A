@@ -1,14 +1,8 @@
 "use server";
 import {NextResponse} from "next/server";
 import mysql from 'mysql2';
+import excuteQuery from "@/app/_lib/db";
 
-const connection = mysql.createConnection({
-    host: process.env.MYSQL_HOST,
-    port: process.env.MYSQL_PORT,
-    database: process.env.MYSQL_DATABASE,
-    user: process.env.MYSQL_USER,
-    password: process.env.MYSQL_PASSWORD
-})
 
 export async function POST(req){
     let respones;
@@ -31,14 +25,10 @@ async function handleDrivePost(req){
     }
     try{
         console.log("try query")
-        connection.query(
-            `INSERT INTO drive (DriveName, Payer, Date, Distance) VALUES (?, ?, ?, ?)`,
-            [dest[1], payer[1], date[1], distance[1]],
-            (err, result) =>{
-                console.log("query succ")
-            }
-        )
-        connection.commit();
+        let data = await excuteQuery({
+            query: "INSERT INTO drive (DriveName, Payer, Date, Distance) VALUES (?, ?, ?, ?)",
+            values: [dest[1], payer[1], date[1], distance[1]]
+        })
         return NextResponse.json({status:200, msg: "insert succ"})
 
     }catch (e) {

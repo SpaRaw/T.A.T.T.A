@@ -6,8 +6,8 @@ import Dialog from "@/app/_components/Dialaog/Dialog";
 import Open from "@/app/_components/UI/Open/Open";
 import DriveForm from "@/app/fahrten/DriveForm/DriveForm";
 
-export default async function fahrten({}){
-    const [shouldShowModal, updateShowModal] = useState(true);
+export default function fahrten({}){
+    const [shouldShowModal, updateShowModal] = useState(false);
     return(
         <>
             <Suspense fallback={<DriveLoading/>}>

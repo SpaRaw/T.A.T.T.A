@@ -1,14 +1,14 @@
 version: "3"
 
 services:
-  app:
-    build: ./app
-    container_name: app
-    restart: always
-    volumes:
-      - /app:/app
-    ports:
-      - "80:3000"
+  #app:
+  #  build: ./app
+  #  container_name: app
+  #  restart: always
+  #  volumes:
+  #    - /app:/app
+  #  ports:
+  #    - "80:3000"
   mysql:
     build: ./db
     container_name: db
@@ -18,3 +18,5 @@ services:
       MYSQL_ROOT_PASSWORD: Z1qYALrscGdNYUMJDuqS
     ports:
     - '3306:3306'
+    volumes:
+      - ./db/hydropi.sql:/docker-entrypoint-inidb.d/hydropi.sql

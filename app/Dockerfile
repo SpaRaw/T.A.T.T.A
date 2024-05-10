@@ -1,21 +1,9 @@
-# Use an official Node.js runtime as a parent image
-FROM node:latest
-
-# Set the working directory in the container
-WORKDIR /usr/src/app
-
-# Install app dependencies
-# A wildcard is used to ensure both package.json AND package-lock.json are copied
-# where available (npm@5+)
+FROM node:20-alpine
+WORKDIR /app
 COPY package*.json ./
-
 RUN npm install
-
-# Bundle app source
 COPY . .
-
-# Build your Next.js app for production
+EXPOSE 3000
 RUN npm run build
 
-# Start the application
 CMD ["npm", "start"]
