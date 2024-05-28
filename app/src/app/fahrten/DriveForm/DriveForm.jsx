@@ -1,9 +1,11 @@
 "use client";
 import styles from "./DriveForm.module.scss"
 import {useState} from "react";
+import {useRouter} from "next/navigation";
 
 export default function DriveForm({callbackClose,children}){
     const [existError, updateExistError] = useState({shouldShow:false, text:''})
+    let router = useRouter();
 
     async function onSubmit(event){
         event.preventDefault();
@@ -12,9 +14,8 @@ export default function DriveForm({callbackClose,children}){
             method: 'POST',
             body: formData
         })
-        console.log(response)
         if(response.status === 200){
-            callbackClose(false);
+           router.push("/fahrten");
         }else{
 
         }

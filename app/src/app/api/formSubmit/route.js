@@ -24,7 +24,6 @@ async function handleDrivePost(req){
         return NextResponse.json({error: 'Information is missing'}, {status: 400})
     }
     try{
-        console.log("try query")
         let data = await excuteQuery({
             query: "INSERT INTO drive (DriveName, Payer, Date, Distance) VALUES (?, ?, ?, ?)",
             values: [dest[1], payer[1], date[1], distance[1]]

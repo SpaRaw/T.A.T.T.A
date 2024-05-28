@@ -1,0 +1,9 @@
+@import "src/app/_resources/scss/variables";
+
+.header{
+  width: 100%;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color:$background-color;
+}
