@@ -1,5 +1,4 @@
 import excuteQuery from "@/app/_lib/db";
-import {NextResponse} from "next/server";
 
 export default async function getAllDrive(){
     let data = await excuteQuery({

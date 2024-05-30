@@ -1,6 +1,7 @@
+import DriveFragment from "@/app/_components/DataFragment/DriveFragment/DriveFragment";
 
 export default function DataFragment({data, type}){
-    const fragments={
-        "drive": <DriveFragment data={data} />
+    if(type === 'drive'){
+        return <DriveFragment data={data} />
     }
 }

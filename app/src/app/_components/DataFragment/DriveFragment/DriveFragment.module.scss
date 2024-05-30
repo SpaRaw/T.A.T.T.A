@@ -1,0 +1,58 @@
+@use "../../../_resources/scss/_variables.scss";
+
+.container{
+  width: 100%;
+  background-color: variables.$background-medium;
+  padding: 1rem;
+  border-radius: 1rem;
+  display: flex;
+  height: 100%;
+
+  .data{
+    width: 80%;
+  }
+
+  .update{
+    width: 20%;
+    position: relative;
+
+    a{
+      height: 100%;
+
+      div{
+        height: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        svg{
+          width: 50%;
+          height: 50%;
+
+          path{
+            fill: variables.$color-accent;
+          }
+        }
+      }
+    }
+  }
+
+  .row1{
+    display: flex;
+    margin-bottom: 0.5rem;
+    color: variables.$text;
+
+    div:first-child{
+      width: 66%;
+    }
+
+    div:last-child{
+      width: 34%;
+    }
+  }
+
+  .row2{
+    color: variables.$text-muted;
+  }
+
+}

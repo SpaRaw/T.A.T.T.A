@@ -1,4 +1,4 @@
-import Plus from "@/app/_components/UI/Open/icon/Plus";
+import Plus from "@/app/_components/UI/icons/Plus";
 import styles from "./Open.module.scss"
 import Link from "next/link";
 

@@ -9,7 +9,6 @@ export default async function DrivePage(){
     return(
         <>
             <Header title={"Fahrten"} />
-
             <DataList fetchFunction={getAllDrive}/>
         </>
     )

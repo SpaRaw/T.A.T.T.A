@@ -1,7 +1,7 @@
 @use "../../_resources/scss/_variables.scss";
 
 .menue {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   left: 0;
   z-index: 3;

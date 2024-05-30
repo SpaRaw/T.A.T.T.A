@@ -1,5 +1,5 @@
 import styles from "./Dialog.module.scss";
-import Cancel from "@/app/_components/Dialaog/icon/Cancel";
+import Cancel from "@/app/_components/UI/icons/Cancel";
 import {useRouter} from "next/navigation";
 import Link from "next/link";
 

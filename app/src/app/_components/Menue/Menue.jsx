@@ -2,10 +2,10 @@
 import styles from "./Menue.module.scss";
 import {useState} from "react";
 import {useRouter} from "next/navigation";
-import Home from "@/app/_components/Menue/icons/Home";
-import Fuel from "@/app/_components/Menue/icons/Fuel";
-import Shopping from "@/app/_components/Menue/icons/Shopping";
-import Drive from "@/app/_components/Menue/icons/Drive";
+import Home from "@/app/_components/UI/icons/Home";
+import Fuel from "@/app/_components/UI/icons/Fuel";
+import Shopping from "@/app/_components/UI/icons/Shopping";
+import Drive from "@/app/_components/UI/icons/Drive";
 
 
 export default function Menue({}) {

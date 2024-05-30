@@ -1,5 +1,4 @@
-"use server";
-import handleDrivePost from "@/app/_lib/handleRequest/handeDrivePost";
+import handleDriveUpdate from "@/app/_lib/handleRequest/handeDriveUpdate";
 
 export async function POST(req){
     let respones;
@@ -7,7 +6,7 @@ export async function POST(req){
     for(let element of body){
         if(element[0] === "type"){
             switch (element[1]){
-                case "drive": respones = await handleDrivePost(body); break;
+                case "drive": respones = await handleDriveUpdate(body); break;
             }
         }
     }
