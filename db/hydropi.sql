@@ -1,6 +1,6 @@
 -- --------------------------------------------------------
--- Host:                         127.0.0.1
--- Server-Version:               8.3.0 - MySQL Community Server - GPL
+-- Host:                         localhost
+-- Server-Version:               8.4.0 - MySQL Community Server - GPL
 -- Server-Betriebssystem:        Linux
 -- HeidiSQL Version:             12.6.0.6765
 -- --------------------------------------------------------
@@ -27,9 +27,9 @@ CREATE TABLE IF NOT EXISTS `drive` (
   `Date` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '0',
   `Distance` varchar(50) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportiere Daten aus Tabelle hydropi.drive: ~6 rows (ungefähr)
+-- Exportiere Daten aus Tabelle hydropi.drive: ~8 rows (ungefähr)
 DELETE FROM `drive`;
 INSERT INTO `drive` (`ID`, `DriveName`, `Payer`, `Date`, `Distance`) VALUES
 	(4, 'Tierartze', 'both', '2024-04-08', '13,3'),
@@ -37,7 +37,21 @@ INSERT INTO `drive` (`ID`, `DriveName`, `Payer`, `Date`, `Distance`) VALUES
 	(6, 'Arbeit', 'minla', '2024-04-08', '30,3'),
 	(7, 'Einkaufen Lidl', 'both', '2024-04-08', '2,1'),
 	(8, 'Eltern Besuchen', 'corgi', '2024-04-07', '260'),
-	(9, 'Test', 'minla', '2024-04-09', '13,3');
+	(9, 'Test', 'minla', '2024-04-09', '13,3'),
+	(10, 'Fahrstunde', 'minla', '2024-05-28', '5,3'),
+	(11, 'Bobs Burgers', 'both', '2024-05-30', '15.0');
+
+-- Exportiere Struktur von Tabelle hydropi.tanken
+CREATE TABLE IF NOT EXISTS `tanken` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Date` varchar(50) NOT NULL DEFAULT '0',
+  `Type` varchar(50) NOT NULL DEFAULT '0',
+  `Payer` varchar(5) NOT NULL DEFAULT 'both',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Exportiere Daten aus Tabelle hydropi.tanken: ~0 rows (ungefähr)
+DELETE FROM `tanken`;
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
