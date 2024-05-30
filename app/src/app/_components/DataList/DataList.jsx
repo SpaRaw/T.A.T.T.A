@@ -1,7 +1,7 @@
 import styles from "./DataList.module.scss"
 import DataFragment from "@/app/_components/DataFragment/DataFragment";
 
-export default async function DataList({fetchFunction}){
+export default async function DataList({fetchFunction, type}){
     let data = await fetchFunction();
     let keys = Object.keys(data);
 
