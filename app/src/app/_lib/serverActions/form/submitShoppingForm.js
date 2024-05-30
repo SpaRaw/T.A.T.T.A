@@ -3,6 +3,7 @@ import insertNewFuel from "@/app/_lib/serverActions/data/INSERT/insetNewFuel";
 import {redirect} from "next/navigation";
 import insertNewShopping from "@/app/_lib/serverActions/data/INSERT/insertNewShopping";
 import updateShoppingEntry from "@/app/_lib/serverActions/data/UPDATE/updateShoppingEntry";
+import {revalidatePath} from "next/cache";
 
 export default async function submitShoppingForm(formData){
     console.log(formData)
@@ -14,6 +15,7 @@ export default async function submitShoppingForm(formData){
     }
     console.log(response)
     if(response?.success){
+        revalidatePath('/einkauf');
         redirect('/einkauf');
     }
 }
