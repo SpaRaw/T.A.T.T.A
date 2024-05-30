@@ -1,12 +1,8 @@
-"use server"
-import {NextResponse} from "next/server";
 import excuteQuery from "@/app/_lib/db";
 
-
-
-async function GET(req){
+export default async function getAllFuel(){
     let data = await excuteQuery({
-        query: "SELECT * FROM drive ORDER BY DATE DESC LIMIT 50"
+        query: "SELECT * FROM fuel ORDER BY DATE DESC LIMIT 50"
     })
     const groupedData = {};
     for(let element of data){
@@ -21,7 +17,5 @@ async function GET(req){
         }
         groupedData[formattedDate].push(element);
     };
-    return NextResponse.json({response: groupedData});
+    return groupedData;
 }
-
-export {GET}

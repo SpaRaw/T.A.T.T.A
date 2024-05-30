@@ -1,7 +1,7 @@
 
 import Open from "@/app/_components/UI/Open/Open";
 import DataList from "@/app/_components/DataList/DataList";
-import getAllDrive from "@/app/_lib/serverActions/getAllDrive";
+import getAllDrive from "@/app/_lib/serverActions/data/GET/getAllDrive";
 import Header from "@/app/_components/UI/Header/Header";
 
 export default async function DrivePage(){
@@ -9,7 +9,7 @@ export default async function DrivePage(){
     return(
         <>
             <Header title={"Fahrten"} />
-            <DataList fetchFunction={getAllDrive}/>
+            <DataList fetchFunction={getAllDrive} type={'drive'}/>
         </>
     )
 }

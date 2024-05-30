@@ -12,6 +12,7 @@ export default async function excuteQuery({ query, values }) {
         const [results, field] = await connection.query(query, values);
         return results;
     } catch (error) {
-        return { error };
+        console.log(error)
+        throw new Error("failed");
     }
 }

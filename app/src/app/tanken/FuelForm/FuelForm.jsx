@@ -1,22 +1,24 @@
+'use server';
+import styles from "./FuelForm.module.scss"
+import submitFuelForm from "@/app/_lib/serverActions/form/submitFuelForm";
 
-import styles from "./DriveForm.module.scss"
-import submitDriveForm from "@/app/_lib/serverActions/form/submitDriveForm";
-
-export default async function DriveForm({children, data=null}){
-
+export default async function FuelForm({children, data=null}){
     return(
         <div className={styles.form}>
-            <form action={submitDriveForm}>
+            <form action={submitFuelForm}>
                 <input type={"hidden"} value={data?.ID} name={'ID'}/>
                 <input type={"hidden"} value={data == null? 'new':'update'} name={'IsNewEntry'} />
+
                 <div>
-                    <h3>Wohin?</h3>
-                    <input
-                        type={"text"}
-                        name={"dest"}
-                        required={true}
-                        defaultValue={data?.DriveName}
-                    />
+                    <h3>Kraftstofftyp?</h3>
+                    <select
+                        name={"type"}
+                        id={"type"}
+                        defaultValue={data==null?"lpg": data?.Type}
+                    >
+                        <option value={"lpg"}>Gas</option>
+                        <option value={"super"}>Super / E10</option>
+                    </select>
                 </div>
 
                 <div>
@@ -24,9 +26,8 @@ export default async function DriveForm({children, data=null}){
                     <select
                         name={"payer"}
                         id={"pay"}
-                        defaultValue={data==null?"both": data?.Payer}
+                        defaultValue={data==null?"Corgi": data?.Payer}
                     >
-                        <option value={"both"}>Beide</option>
                         <option value={"corgi"}>Corgi</option>
                         <option value={"minla"}>Minla</option>
                     </select>
@@ -43,14 +44,15 @@ export default async function DriveForm({children, data=null}){
                 </div>
 
                 <div>
-                    <h3>Wie weit?</h3>
+                    <h3>Preis?</h3>
                     <input
                         type={"float"}
-                        name={"distance"}
+                        name={"price"}
                         required={true}
-                        defaultValue={data?.Distance}
+                        defaultValue={data?.Price}
                     />
                 </div>
+
                 <button>Speichern</button>
             </form>
         </div>

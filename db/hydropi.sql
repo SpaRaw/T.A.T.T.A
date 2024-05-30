@@ -29,29 +29,32 @@ CREATE TABLE IF NOT EXISTS `drive` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportiere Daten aus Tabelle hydropi.drive: ~8 rows (ungefähr)
-DELETE FROM `drive`;
-INSERT INTO `drive` (`ID`, `DriveName`, `Payer`, `Date`, `Distance`) VALUES
-	(4, 'Tierartze', 'both', '2024-04-08', '13,3'),
-	(5, 'Animuc', 'minla', '2024-04-05', '130.3'),
-	(6, 'Arbeit', 'minla', '2024-04-08', '30,3'),
-	(7, 'Einkaufen Lidl', 'both', '2024-04-08', '2,1'),
-	(8, 'Eltern Besuchen', 'corgi', '2024-04-07', '260'),
-	(9, 'Test', 'minla', '2024-04-09', '13,3'),
-	(10, 'Fahrstunde', 'minla', '2024-05-28', '5,3'),
-	(11, 'Bobs Burgers', 'both', '2024-05-30', '15.0');
+-- Daten-Export vom Benutzer nicht ausgewählt
 
--- Exportiere Struktur von Tabelle hydropi.tanken
-CREATE TABLE IF NOT EXISTS `tanken` (
+-- Exportiere Struktur von Tabelle hydropi.fuel
+CREATE TABLE IF NOT EXISTS `fuel` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Date` varchar(50) NOT NULL DEFAULT '0',
   `Type` varchar(50) NOT NULL DEFAULT '0',
   `Payer` varchar(5) NOT NULL DEFAULT 'both',
+  `Price` float DEFAULT '0',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+-- Daten-Export vom Benutzer nicht ausgewählt
+
+-- Exportiere Struktur von Tabelle hydropi.shopping
+CREATE TABLE IF NOT EXISTS `shopping` (
+  `ID` int NOT NULL AUTO_INCREMENT,
+  `Date` varchar(50) NOT NULL DEFAULT '0',
+  `Payer` varchar(5) NOT NULL DEFAULT '0',
+  `CorgiAmount` float NOT NULL DEFAULT (0),
+  `MinlaAmount` float NOT NULL DEFAULT (0),
+  `Name` varchar(50) NOT NULL DEFAULT '0',
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
--- Exportiere Daten aus Tabelle hydropi.tanken: ~0 rows (ungefähr)
-DELETE FROM `tanken`;
+-- Daten-Export vom Benutzer nicht ausgewählt
 
 /*!40103 SET TIME_ZONE=IFNULL(@OLD_TIME_ZONE, 'system') */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;

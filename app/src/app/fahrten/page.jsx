@@ -1,18 +1,17 @@
 
 import {Suspense} from "react";
-import DriveLoading from "@/app/fahrten/DriveLoading/DriveLoading";
 import DrivePage from "@/app/fahrten/DrivePage/DrivePage";
 import Open from "@/app/_components/UI/Open/Open";
 import Spacer from "@/app/_components/Spacer/Spacer";
+import LoadingScreen from "@/app/_components/LoadingScreen/LoadingScreen";
 
 export default function fahrten({}){
     return(
         <>
-            <Suspense fallback={<DriveLoading/>}>
+            <Suspense fallback={<LoadingScreen title={"Sammle alle Fahrten"}/>}>
                 <DrivePage />
             </Suspense>
             <Open path={'/dialog/newDrive'}/>
-            <Spacer />
         </>
     )
 }

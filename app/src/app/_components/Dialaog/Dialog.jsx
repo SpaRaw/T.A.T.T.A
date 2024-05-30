@@ -1,6 +1,5 @@
 import styles from "./Dialog.module.scss";
 import Cancel from "@/app/_components/UI/icons/Cancel";
-import {useRouter} from "next/navigation";
 import Link from "next/link";
 
 export default function Dialog({title, path, updateContent,children}){

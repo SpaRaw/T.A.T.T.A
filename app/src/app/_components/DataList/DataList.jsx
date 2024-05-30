@@ -17,7 +17,7 @@ export default async function DataList({fetchFunction}){
                         {dataList.map((entry)=>{
                             return(
                             <li key={entry.ID} className={styles.listItems}>
-                                <DataFragment data={entry} type={'drive'}/>
+                                <DataFragment data={entry} type={type}/>
                             </li>
                             )
                         })}

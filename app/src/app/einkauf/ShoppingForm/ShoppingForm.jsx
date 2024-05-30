@@ -1,21 +1,23 @@
+'use server';
+import styles from "./ShoppingForm.module.scss"
+import submitShoppingForm from "@/app/_lib/serverActions/form/submitShoppingForm";
+import Spacer from "@/app/_components/Spacer/Spacer";
 
-import styles from "./DriveForm.module.scss"
-import submitDriveForm from "@/app/_lib/serverActions/form/submitDriveForm";
-
-export default async function DriveForm({children, data=null}){
+export default async function ShoppingForm({children, data=null}){
 
     return(
         <div className={styles.form}>
-            <form action={submitDriveForm}>
+            <form action={submitShoppingForm}>
                 <input type={"hidden"} value={data?.ID} name={'ID'}/>
                 <input type={"hidden"} value={data == null? 'new':'update'} name={'IsNewEntry'} />
+
                 <div>
-                    <h3>Wohin?</h3>
+                    <h3>Wo?</h3>
                     <input
                         type={"text"}
-                        name={"dest"}
+                        name={"where"}
                         required={true}
-                        defaultValue={data?.DriveName}
+                        defaultValue={data?.Name}
                     />
                 </div>
 
@@ -24,9 +26,8 @@ export default async function DriveForm({children, data=null}){
                     <select
                         name={"payer"}
                         id={"pay"}
-                        defaultValue={data==null?"both": data?.Payer}
+                        defaultValue={data==null?"Corgi": data?.Payer}
                     >
-                        <option value={"both"}>Beide</option>
                         <option value={"corgi"}>Corgi</option>
                         <option value={"minla"}>Minla</option>
                     </select>
@@ -42,13 +43,21 @@ export default async function DriveForm({children, data=null}){
                     />
                 </div>
 
-                <div>
-                    <h3>Wie weit?</h3>
+                <div className={styles.lastInput}>
+                    <h3>Anteil Corgi</h3>
                     <input
                         type={"float"}
-                        name={"distance"}
+                        name={"corgisShare"}
                         required={true}
-                        defaultValue={data?.Distance}
+                        defaultValue={data?.CorgiAmount}
+                    />
+                    <h3>Anteil Minla</h3>
+                    <input
+                        type={"float"}
+                        name={"minlasShare"}
+                        required={true}
+                        defaultValue={data?.MinlaAmount}
+
                     />
                 </div>
                 <button>Speichern</button>

@@ -1,6 +1,7 @@
 
 import "./globals.scss";
 import Menue from "@/app/_components/Menue/Menue";
+import Spacer from "@/app/_components/Spacer/Spacer";
 
 
 export default function RootLayout({ children }) {
@@ -8,6 +9,7 @@ export default function RootLayout({ children }) {
     <html lang="de">
       <body>
       {children}
+      <Spacer />
       <Menue />
       </body>
     </html>

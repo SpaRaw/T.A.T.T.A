@@ -1,8 +1,8 @@
 import excuteQuery from "@/app/_lib/db";
 
-export default async function getAllDrive(){
+export default async function getAllShopping(){
     let data = await excuteQuery({
-        query: "SELECT * FROM drive ORDER BY DATE DESC LIMIT 50"
+        query: "SELECT * FROM shopping ORDER BY DATE DESC LIMIT 50"
     })
     const groupedData = {};
     for(let element of data){

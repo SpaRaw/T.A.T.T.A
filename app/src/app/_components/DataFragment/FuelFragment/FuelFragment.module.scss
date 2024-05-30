@@ -10,6 +10,8 @@
 
   .data{
     width: 80%;
+    display: flex;
+    align-items: center;
   }
 
   .payer{
@@ -18,7 +20,14 @@
       display: flex;
       align-content: center;
       svg{
+        width: 34px;
+        height: 34px;
         margin-right: 1rem;
+      }
+
+      div{
+        display: flex;
+        align-items: center;
       }
     }
   }
@@ -49,18 +58,15 @@
   }
 
   .row1{
+    width: 100%;
     display: flex;
-    margin-bottom: 0.5rem;
     color: variables.$text;
-
-    div:first-child{
-      width: 66%;
-    }
-
-    div:last-child{
-      width: 34%;
-    }
+    justify-content: space-between;
+    align-items: center;
   }
 
+  .row2{
+    color: variables.$text-muted;
+  }
 
 }
