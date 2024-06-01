@@ -6,14 +6,12 @@ import updateShoppingEntry from "@/app/_lib/serverActions/data/UPDATE/updateShop
 import {revalidatePath} from "next/cache";
 
 export default async function submitShoppingForm(formData){
-    console.log(formData)
     let response;
     if(formData.get('IsNewEntry') === 'new'){
         response = await insertNewShopping(formData);
     }else{
         response = await updateShoppingEntry(formData);
     }
-    console.log(response)
     if(response?.success){
         revalidatePath('/einkauf');
         redirect('/einkauf');

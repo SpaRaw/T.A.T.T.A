@@ -1,6 +1,7 @@
 'use server';
 import styles from "./FuelForm.module.scss"
 import submitFuelForm from "@/app/_lib/serverActions/form/submitFuelForm";
+import Delete from "@/app/_components/UI/icons/Delete";
 
 export default async function FuelForm({children, data=null}){
     return(
@@ -54,6 +55,7 @@ export default async function FuelForm({children, data=null}){
                 </div>
 
                 <button>Speichern</button>
+                {data !== null && <button name={"delete"} className={styles.delete} value={"0"}> <Delete/> </button>}
             </form>
         </div>
     )

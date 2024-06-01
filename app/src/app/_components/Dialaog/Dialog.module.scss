@@ -2,13 +2,10 @@
 
 .modal{
   background-color: variables.$background-medium;
-  position: absolute;
-  top: 0;
-  left: 0;
   width: calc(100% - 2rem);
-  height: calc(100% - 2rem);
   z-index: 100;
   padding: 1rem;
+  border-radius: 1rem;
 
   .backButton{
     background-color: transparent;

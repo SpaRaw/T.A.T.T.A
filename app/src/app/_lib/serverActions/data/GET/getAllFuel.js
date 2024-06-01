@@ -2,7 +2,7 @@ import excuteQuery from "@/app/_lib/db";
 
 export default async function getAllFuel(){
     let data = await excuteQuery({
-        query: "SELECT * FROM fuel ORDER BY DATE DESC LIMIT 50"
+        query: "SELECT * FROM fuel WHERE isActive=1 ORDER BY DATE DESC LIMIT 50"
     })
     const groupedData = {};
     for(let element of data){

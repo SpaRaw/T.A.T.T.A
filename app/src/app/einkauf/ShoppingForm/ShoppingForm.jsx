@@ -2,6 +2,7 @@
 import styles from "./ShoppingForm.module.scss"
 import submitShoppingForm from "@/app/_lib/serverActions/form/submitShoppingForm";
 import Spacer from "@/app/_components/Spacer/Spacer";
+import Delete from "@/app/_components/UI/icons/Delete";
 
 export default async function ShoppingForm({children, data=null}){
 
@@ -60,7 +61,8 @@ export default async function ShoppingForm({children, data=null}){
 
                     />
                 </div>
-                <button>Speichern</button>
+                <button name={"save"}>Speichern</button>
+                {data !== null && <button name={"delete"} className={styles.delete} value={"0"}> <Delete/> </button>}
             </form>
         </div>
     )

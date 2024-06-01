@@ -2,7 +2,7 @@ import excuteQuery from "@/app/_lib/db";
 
 export default async function getAllDrive(){
     let data = await excuteQuery({
-        query: "SELECT * FROM drive ORDER BY DATE DESC LIMIT 100"
+        query: "SELECT * FROM drive WHERE isActive=1 ORDER BY DATE DESC LIMIT 100"
     })
     const groupedData = {};
     for(let element of data){

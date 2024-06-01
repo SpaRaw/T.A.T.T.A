@@ -32,15 +32,24 @@
   }
 
   button{
-    position: absolute;
-    bottom: 16px;
-    left: 16px;
-    right: 16px;
+    width: 100%;
+    margin-top: 1rem;
     padding: 1rem;
     color: $background-medium;
     background-color: $color-accent;
     border-radius: 1rem;
     font-size: 2rem;
     z-index: 90;
+  }
+
+  .delete{
+    background-color: $background-medium;
+    border-color: $color-error;
+
+    svg{
+      width: 32px;
+      height: 32px;
+      fill: $color-error;
+    }
   }
 }

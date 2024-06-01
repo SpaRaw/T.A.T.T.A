@@ -1,6 +1,7 @@
 
 import styles from "./DriveForm.module.scss"
 import submitDriveForm from "@/app/_lib/serverActions/form/submitDriveForm";
+import Delete from "@/app/_components/UI/icons/Delete";
 
 export default async function DriveForm({children, data=null}){
 
@@ -52,6 +53,7 @@ export default async function DriveForm({children, data=null}){
                     />
                 </div>
                 <button>Speichern</button>
+                {data !== null && <button name={"delete"} className={styles.delete} value={"0"}> <Delete/> </button>}
             </form>
         </div>
     )
