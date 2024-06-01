@@ -3,6 +3,7 @@ import LoadingScreen from "@/app/_components/LoadingScreen/LoadingScreen";
 import Open from "@/app/_components/UI/Open/Open";
 import Spacer from "@/app/_components/Spacer/Spacer";
 import ShoppingPage from "@/app/einkauf/ShoppingPage/ShoppingPage";
+import ForceRefresher from "@/app/_components/ForceRefresher/ForceRefresher";
 
 export default function einkauf({}){
     return(
@@ -11,6 +12,7 @@ export default function einkauf({}){
                 <ShoppingPage />
             </Suspense>
             <Open path={'/dialog/shopping'}/>
+            <ForceRefresher />
         </>
     )
 }
