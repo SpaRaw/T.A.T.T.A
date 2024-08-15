@@ -1,5 +1,8 @@
 import { NextResponse } from 'next/server';
+import excuteQuery from "@/app/_lib/db";
+import Abrechnung from "@/app/_lib/serverActions/abrechnung/abrechnung";
 
 export async function GET() {
-    return NextResponse.json({ ok: true });
+    Abrechnung()
+    return NextResponse.json({data: "good"});
 }
